@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div class="posts">
+{% for post in site.posts %}
+    <article class="post">    
+
+    <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+    <div class="entry">
+        <div class="appdetails-summary">
+            <div class="appicon-mobile">
+                <a href="{{ site.baseurl }}{{ post.url }}"><img src="{{ post.appicon }}" alt="{{ post.appname }} Icon" /></a>
+            </div>
+            <div class="appproperties">
+                <div class="date">Audited {{ post.date | date: "%B %e, %Y" }}</div>
+                <pre><b>SHA1:</b> {{ post.sha1 }}</pre>
+                <pre><b>MD5:</b> {{ post.md5 }}</pre>
+            </div>
+            <div class="appicon">
+                <a href="{{ site.baseurl }}{{ post.url }}"><img src="{{ post.appicon }}" alt="{{ post.appname }} Icon" /></a>
+            </div>
+        </div>
+        <p><div class="verdict verdict-{{ post.verdict-color }}">{{ post.verdict }}</div></p>
+        <p>{{ post.summary | truncatewords:140}}<p>
+    </div>
+
+    <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+{% endfor %}
+</div>

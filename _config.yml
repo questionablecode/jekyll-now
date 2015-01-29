@@ -3,13 +3,13 @@
 #
 
 # Name of your site (displayed in the header)
-name: Your Name
+name: Questionable Code
 
 # Short bio or description (displayed in the header)
-description: Web Developer from Somewhere
+description: Deciphering logic with a skeptical mind
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
+avatar: https://raw.githubusercontent.com/questionablecode/questionablecode.github.io/master/images/logo.png     
 
 #
 # Flags below are optional
@@ -18,30 +18,30 @@ avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/je
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble: 
-  email: 
+  email: contact@questionablecode.org
   facebook: 
   flickr: 
-  github: barryclark/jekyll-now
+  github: questionablecode
   instagram: 
   linkedin: 
   pinterest: 
   rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
-  twitter: jekyllrb
+  twitter: 
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
 
 # Your disqus shortname, entering this will enable commenting on posts
-disqus: 
+disqus: questionablecode
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics: 
+google_analytics: UA-57857579-1
 
-# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
+# Your website URL (e.g. https://barryclark.github.io or https://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url: 
+url: https://questionablecode.org
 
 # If you're hosting your site at a Project repository on GitHub pages 
-# (http://yourusername.github.io/repository-name)
-# and NOT your User repository (http://yourusername.github.io)
+# (https://yourusername.github.io/repository-name)
+# and NOT your User repository (https://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: ""
 
@@ -49,7 +49,7 @@ baseurl: ""
 # !! You don't need to change any of the configuration flags below !!
 #
 
-markdown: redcarpet
+markdown: kramdown
 highlighter: pygments
 permalink: /:title/
 
@@ -61,8 +61,16 @@ sass:
   sass_dir: _scss
   style: :expanded # You might prefer to minify using :compressed
 
+asset_pipeline:
+  bundle: true            # Default = true
+  compress: false          # Default = true
+  output_path: assets     # Default = assets
+  display_path: nil       # Default = nil
+  gzip: false             # Default = false
+  
 # Use the following plug-ins
 gems:
+  - jemoji # Emoji please!
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
 
 # Exclude these files from your production _site
@@ -71,3 +79,4 @@ exclude:
     - Gemfile.lock
     - LICENSE
     - README.md
+    - attributions.txt

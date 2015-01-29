@@ -6,10 +6,29 @@ layout: default
   <h1>{{ page.title }}</h1>
 
   <div class="entry">
+    <div class="appdetails">
+        <div class="appicon-mobile">
+            {% if page.appurl %}<a href="{{ page.appurl }}" target="_blank">{% endif %}<img src="{{ page.appicon }}" alt="{{ page.appname }} Icon" />{% if page.appurl %}</a>{% endif %}
+        </div>
+        <div class="appproperties">
+            <pre><b>App:</b> {% if page.appurl %}<a href="{{ page.appurl }}" target="_blank">{% endif %}{{ page.appname }}{% if page.appurl %}</a>{% endif %}</pre>
+            <pre><b>Version:</b> {{ page.appversion }}</pre>
+            <pre><b>Package:</b>  {{ page.appid }}</pre>
+            <pre><b>SHA1:</b> {{ page.sha1 }}</pre>
+            <pre><b>MD5:</b> {{ page.md5 }}</pre>
+            <pre><b>Date:</b> {{ page.date | date: "%B %e, %Y" }}</pre>
+        </div>
+         <div class="appicon">
+            {% if page.appurl %}<a href="{{ page.appurl }}" target="_blank">{% endif %}<img src="{{ page.appicon }}" alt="{{ page.appname }} Icon" />{% if page.appurl %}</a>{% endif %}
+        </div>
+    </div>
+    <hr>
+    <br />
     {{ content }}
   </div>
 
   <div class="date">
+    <br />
     Written on {{ page.date | date: "%B %e, %Y" }}
   </div>
 

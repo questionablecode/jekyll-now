@@ -1,30 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script>
+      var host = "questionablecode.github.io"
+      if (window.location.host == host && window.location.protocol != "https:") {
+         window.location.protocol = "https:"
+      }
+    </script>
+
+    <style>    
+        .smooth_zoom_preloader {
+            background-image: url({{ site.baseurl }}/assets/javascript/smoothzoom/preloader.gif);
+        }    
+        .smooth_zoom_icons {
+            background-image: url({{ site.baseurl }}/assets/javascript/smoothzoom/icons.png);
+        }
+    </style>
+
+    <script src="{{ site.baseurl }}/assets/javascript/jquery-1.11.1.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/javascript/smoothzoom/jquery.smoothZoom.min.js"></script>
+
     <meta charset="utf-8" />
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/questionablecode/questionablecode.github.io/master/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://raw.githubusercontent.com/questionablecode/questionablecode.github.io/master/images/favicon.ico" type="image/x-icon">
 
     <meta name="author" content="{{ site.name }}" />
     <meta name="description" content="{{ site.description }}">
 
     <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
 
   <body>
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+          <a href="{{ site.baseurl }}/" class="site-avatar template"><img src="{{ site.avatar }}" /></a>
           
           <div class="site-info">
             <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
@@ -32,8 +53,9 @@
           </div>
           
           <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
+            <a href="{{ site.baseurl }}/">Home</a>
+            <a href="{{ site.baseurl }}/audits">Audits</a>
+            <a href="{{ site.baseurl }}/tools">Tools</a>
           </nav>
         </header>
       </div>
@@ -47,6 +69,8 @@
       <div class="container">
         <footer class="footer">
           {% include svg-icons.html %}
+          <br />
+          &copy; {{ site.name }} 2014
         </footer>
       </div>
     </div>
